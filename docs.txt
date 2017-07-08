@@ -1,0 +1,27 @@
+I. Visual Studio Code :
+      1. Terminal : ctrl + shift + P
+      2. Clear terminal : ctrl + k
+      3. npm install -g nodemon
+         npm install --save-dev nodemon
+      4. ext install code-spell-checker (ctrl + p)
+II. Git on Visual Studio Code
+      1. git status
+      2. git add file | git add -A [add file | add all file]
+      3. git commit -m "<commit message>"
+      4. git push origin | git push origin master
+      5. git commit -am  "<commit message>" [add all file and commit all modified]
+      6. git config --global user.name "Lich Truong"
+      git config --global user.name
+      7. git config --global user.enail "lichcse@gmail.com"
+      git config --global user.email
+      8. save username and password
+      + git config credential.helper store
+      + git push https://github.com/lichcse/lichtv.node.git
+            - Username
+            - Password
+      + git config --global --unset credential.helper
+      9. git clone https://github.com/lichcse/lichtv.node.git
+III Async
+      1. npm init
+      2. npm install
+      2. npm update --save
