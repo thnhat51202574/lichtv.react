@@ -1,15 +1,15 @@
 import React from 'react';
 
-const Error = React.createClass({
+class Error extends React.Component {
     render() {
         return (
-            <div>{this.props.text}
+            <div>
                 <h1>{this.props.message}</h1>
                 <h2>{this.props.error.status}</h2>
                 <pre>{this.props.error.stack}</pre>
             </div>
         );
     }
-});
+};
 
 export default Error;
