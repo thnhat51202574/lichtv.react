@@ -1,5 +1,5 @@
 class Reservation extends React.Component {
-  constructor(props) {
+    constructor(props) {
         super(props);
         this.state = {
             isGoing: true,
@@ -53,6 +53,6 @@ class Reservation extends React.Component {
   }
 }
 ReactDOM.render(
-  <Reservation />,
-  document.getElementById('root')
+    <Reservation />,
+    document.getElementById('root')
 );
