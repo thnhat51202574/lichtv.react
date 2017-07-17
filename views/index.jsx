@@ -1,6 +1,9 @@
 import React from 'react';
 
 class Home extends React.Component {
+    clickHere (){
+        console.log(789);
+    }
     render() {
         return (
             <div>
