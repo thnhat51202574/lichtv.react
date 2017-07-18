@@ -1,40 +1,30 @@
-class Clock extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {date: new Date()};
-    }
-
-    componentDidMount() {
-        this.timerID = setInterval(
-            () => this.tick(),
-           this.props.delay
-        );
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timerID);
-    }
-
-    tick() {
-        this.setState({
-            date: new Date()
-        });
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>Hello, world!</h1>
-                <h2>It is {this.state.date.toLocaleTimeString()} - delay: {this.props.delay}(ms)</h2>
-            </div>
-        );
-    }
+function Blog(props) {
+    const posts = props.posts;
+    return (
+        <div>
+            <ul>
+                {posts.map((post) =>
+                    <li key={post.id}>
+                        {post.title}
+                    </li>
+                )}
+            </ul>
+            <hr />
+            {posts.map((post) =>
+                <div key={post.id}>
+                    <h3>{post.title}</h3>
+                    <p>{post.content}</p>
+                </div>
+            )}
+        </div>
+    );
 }
 
+const posts = [
+    {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+    {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
 ReactDOM.render(
-    <div>
-        <Clock delay="1000"/>
-        <Clock delay="3000"/>
-    </div>,
+    <Blog posts={posts} />,
     document.getElementById('root')
 );
