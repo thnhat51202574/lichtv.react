@@ -25,3 +25,7 @@ III Async
       1. npm init
       2. npm install
       2. npm update --save
+
+IV Socket
+      1. http://www.thegreatcodeadventure.com/real-time-react-with-socket-io-building-a-pair-programming-app/
+      2. http://danialk.github.io/blog/2013/06/16/reactjs-and-socket-dot-io-chat-application/
