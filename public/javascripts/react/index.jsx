@@ -4,7 +4,7 @@ class Reservation extends React.Component {
         super(props);
         this.state = {
             isGoing: true,
-            numberOfGuests: 2
+            numberOfGuests: 10
         };
 
         this.handleInputChange = this.handleInputChange.bind(this);
