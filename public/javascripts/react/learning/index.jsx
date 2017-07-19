@@ -1,52 +1,59 @@
-class Blog extends React.Component {
+class Reservation extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {posts : this.props.posts};
+        this.state = {
+            isGoing: true,
+            numberOfGuests: 2
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidMount() {
-        this.timerID = setInterval(
-            () => this.setState({}),
-            1000
-        );
+    handleInputChange(event) {
+        const target = event.target;
+        const value = target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+        console.log('change: ', name, value);
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit(event){
+        console.log('state : ', this.state);
+        event.preventDefault();
     }
 
     render() {
-        const posts = this.state.posts;
         return (
-            <div>
-                <ul>
-                    {posts.map((post) =>
-                        <li key={post.id}>
-                            {post.title}
-                        </li>
-                    )}
-                </ul>
-                <hr />
-                {posts.map((post) =>
-                    <div key={post.id}>
-                        <h3>{post.title}</h3>
-                        <p>{post.content}</p>
-                    </div>
-                )}
-            </div>
+            <form onSubmit={this.handleSubmit}>
+                <label>
+                    Is going:
+                    <input
+                        name="isGoing"
+                        type="checkbox"
+                        checked={this.state.isGoing}
+                        onChange={this.handleInputChange} />
+                </label>
+                <br />
+                <label>
+                    Number of guests:
+                    <input
+                        name="numberOfGuests"
+                        type="number"
+                        value={this.state.numberOfGuests}
+                        onChange={this.handleInputChange} />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
         );
     }
 }
 
-var posts = [
-    {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
-    {id: 2, title: 'Installation', content: 'You can install React from npm.'}
-];
-
-var iCount = 3;
-setInterval(function(){
-    posts.push({id: iCount, title: 'Blog ' + iCount, content: 'Count ' + iCount});
-    iCount++;
-},1000);
-
 ReactDOM.render(
-    <Blog posts={posts} />,
+    <Reservation />,
     document.getElementById('root')
 );
