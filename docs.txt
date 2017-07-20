@@ -29,3 +29,6 @@ III Async
 IV Socket
       1. http://www.thegreatcodeadventure.com/real-time-react-with-socket-io-building-a-pair-programming-app/
       2. http://danialk.github.io/blog/2013/06/16/reactjs-and-socket-dot-io-chat-application/
+V Flus
+      1. https://coddingdaily.blogspot.com/2015/07/reactjs-bai-18-kien-truc-flux.html
+      2. https://reactvn.org/t/flux-architecture-la-gi/111
